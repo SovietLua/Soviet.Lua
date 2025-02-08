@@ -74,7 +74,7 @@ end
 --// Checking for multiple processes
 
 if SovietLua and SovietLua.Exit then
-	SovietLua:Exit()
+	return
 end
 
 --// Environment
@@ -330,21 +330,6 @@ ServiceConnections.TypingEndedConnection = Connect(__index(UserInputService, "Te
 end)
 
 --// Functions
-
-function Environment.Exit(self) -- METHOD | SovietLua:Exit(<void>)
-	assert(self, "SOVIET_AIMBOT-V3.Exit: Missing parameter #1 \"self\" <table>.")
-
-	for Index, _ in next, ServiceConnections do
-		Disconnect(ServiceConnections[Index])
-	end
-
-	Load = nil; ConvertVector = nil; CancelLock = nil; GetClosestPlayer = nil; GetRainbowColor = nil; FixUsername = nil
-
-	self.FOVCircle:Remove()
-	self.FOVCircleOutline:Remove()
-	getgenv().SovietLua = nil
-end
-
 function Environment.Restart() -- SovietLua.Restart(<void>)
 	for Index, _ in next, ServiceConnections do
 		Disconnect(ServiceConnections[Index])
