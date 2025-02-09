@@ -236,29 +236,29 @@ local Load = function()
 		local OffsetToMoveDirection, LockPart = Settings.OffsetToMoveDirection, Settings.LockPart
 
 		if FOVSettings.Enabled and Settings.Enabled then
-        local MousePos = GetMouseLocation(UserInputService)
+        		local MousePos = GetMouseLocation(UserInputService)
 
-        setrenderproperty(FOVCircle, "Position", MousePos)
-        setrenderproperty(FOVCircleOutline, "Position", MousePos)
+        		setrenderproperty(FOVCircle, "Position", MousePos)
+        		setrenderproperty(FOVCircleOutline, "Position", MousePos)
 
-        local FOVRadius = math.max(10, FOVSettings.Radius)
-        setrenderproperty(FOVCircle, "Radius", FOVRadius)
-        setrenderproperty(FOVCircleOutline, "Radius", FOVRadius + 2)
+        		local FOVRadius = math.max(10, FOVSettings.Radius)
+        		setrenderproperty(FOVCircle, "Radius", FOVRadius)
+        		setrenderproperty(FOVCircleOutline, "Radius", FOVRadius + 2)
 
-        local FOVColor = Environment.Locked and FOVSettings.LockedColor or (FOVSettings.RainbowColor and GetRainbowColor() or FOVSettings.Color)
-        setrenderproperty(FOVCircle, "Color", FOVColor)
-        setrenderproperty(FOVCircleOutline, "Color", FOVSettings.RainbowOutlineColor and GetRainbowColor() or FOVSettings.OutlineColor)
+        		local FOVColor = Environment.Locked and FOVSettings.LockedColor or (FOVSettings.RainbowColor and GetRainbowColor() or FOVSettings.Color)
+        		setrenderproperty(FOVCircle, "Color", FOVColor)
+        		setrenderproperty(FOVCircleOutline, "Color", FOVSettings.RainbowOutlineColor and GetRainbowColor() or FOVSettings.OutlineColor)
 
-        setrenderproperty(FOVCircleOutline, "Thickness", FOVSettings.Thickness)
-        setrenderproperty(FOVCircle, "Filled", FOVSettings.Filled)
+        		setrenderproperty(FOVCircleOutline, "Thickness", FOVSettings.Thickness)
+        		setrenderproperty(FOVCircle, "Filled", FOVSettings.Filled)
 
-        local shouldBeVisible = FOVSettings.Visible
-        setrenderproperty(FOVCircle, "Visible", shouldBeVisible)
-        setrenderproperty(FOVCircleOutline, "Visible", shouldBeVisible and not FOVSettings.Filled)
-    else
-        setrenderproperty(FOVCircle, "Visible", false)
-        setrenderproperty(FOVCircleOutline, "Visible", false)
-    end
+        		local shouldBeVisible = FOVSettings.Visible
+        		setrenderproperty(FOVCircle, "Visible", shouldBeVisible)
+        		setrenderproperty(FOVCircleOutline, "Visible", shouldBeVisible and not FOVSettings.Filled)
+    		else
+        		setrenderproperty(FOVCircle, "Visible", false)
+        		setrenderproperty(FOVCircleOutline, "Visible", false)
+    		end
 
 
 		if Running and Settings.Enabled then
